@@ -1,8 +1,8 @@
 import socket
 import threading
 
-HOST = '127.0.0.1'  # Localhost
-PORT = 6789        # Port to listen on
+HOST = '127.0.0.1' 
+PORT = 6789        
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((HOST, PORT))
@@ -15,7 +15,6 @@ def broadcast(message):
     for client in clients:
         client.send(message)
 
-# Handle individual client connection
 def handle_client(client):
     while True:
         try:
@@ -32,7 +31,6 @@ def handle_client(client):
             break
 
 
-# Accepting new connections
 def receive():
     while True:
 
